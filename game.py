@@ -14,8 +14,8 @@ def main():
     player = Hero()
 
     while enemy.alive() and player.alive():
-        print("You have {} health and {} power.".format(player.health, player.power))
-        print("The goblin has {} health and {} power.".format(enemy.health, enemy.power))
+        player.print_status()
+        enemy.print_status()
         print()
         print("What do you want to do?")
         print("1. fight goblin")

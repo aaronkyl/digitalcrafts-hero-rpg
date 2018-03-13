@@ -12,3 +12,6 @@ class Hero:
             return True
         else:
             return False
+            
+    def print_status(self):
+        print("You have {} health and {} power.".format(self.health, self.power))
