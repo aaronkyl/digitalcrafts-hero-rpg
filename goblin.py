@@ -6,3 +6,9 @@ class Goblin:
     def attack(self, target):
         target.health -= self.power
         print("The {} does {} damage to you.".format(type(self).__name__.lower(), self.power))
+        
+    def alive(self):
+        if self.health > 0:
+            return True
+        else:
+            return False
