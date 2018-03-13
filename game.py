@@ -25,8 +25,7 @@ def main():
         raw_input = input()
         if raw_input == "1":
             # Hero attacks goblin
-            enemy.health -= player.power
-            print("You do {} damage to the goblin.".format(player.power))
+            player.attack(enemy)
             if enemy.health <= 0:
                 print("The goblin is dead.")
         elif raw_input == "2":
