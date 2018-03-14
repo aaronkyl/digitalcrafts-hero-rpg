@@ -1,7 +1,8 @@
 class Character:
-    def __init__(self, health, power):
+    def __init__(self, health, power, bounty = 0):
         self.health = health
         self.power = power
+        self.bounty = 0
         
     def alive(self):
         if self.health > 0:
@@ -16,6 +17,7 @@ class Character:
         return False
     
     def defended(self):
+        print("The {} blocked!".format(type(self).__name__.lower()))
         pass
         
     def attack(self, target, attack_power=None):
@@ -28,7 +30,7 @@ class Character:
                 target.health -= attack_power
             
             if type(self).__name__.lower() == 'hero':
-                print("You do {Fore.RED}{} damage{Style.RESET_ALL} to the {}.".format(attack_power, type(target).__name__.lower()))
+                print("You do {} damage to the {}.".format(attack_power, type(target).__name__.lower()))
             else:
                 print("The {} does {} damage to you.".format(type(self).__name__.lower(), attack_power))
             
