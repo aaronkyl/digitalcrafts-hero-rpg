@@ -1,4 +1,4 @@
-from base import Character
+from characters.base import Character
 
 class Goblin(Character):
     def __init__(self, health, power):

@@ -1,4 +1,4 @@
-from base import Character
+from characters.base import Character
 
 class Zombie(Character):
     def __init__(self, health, power):

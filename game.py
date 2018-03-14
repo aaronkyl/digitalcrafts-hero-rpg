@@ -6,11 +6,11 @@
 # 2. do nothing - in which case the goblin will attack him anyway
 # 3. flee
 
-from goblin import Goblin
-from hero import Hero
-from zombie import Zombie
-from medic import Medic
-from shadow import Shadow
+from characters.goblin import Goblin
+from characters.hero import Hero
+from characters.zombie import Zombie
+from characters.medic import Medic
+from characters.shadow import Shadow
 
 def main():
     # enemy = Goblin(10, 2)

@@ -1,4 +1,4 @@
-from base import Character
+from characters.base import Character
 from random import randint
 
 class Medic(Character):
