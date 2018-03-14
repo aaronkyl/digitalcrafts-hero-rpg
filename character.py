@@ -1,7 +1,7 @@
 class Character:
-    def __init__(self):
-        self.health = 0
-        self.power = 0
+    def __init__(self, health, power):
+        self.health = health
+        self.power = power
         
     def alive(self):
         if self.health > 0:

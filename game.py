@@ -11,9 +11,9 @@ from hero import Hero
 from zombie import Zombie
 
 def main():
-    # enemy = Goblin()
-    enemy = Zombie()
-    player = Hero()
+    enemy = Goblin(6, 2)
+    # enemy = Zombie(6, 1)
+    player = Hero(10, 5)
 
     while enemy.alive() and player.alive():
         player.print_status()
@@ -26,7 +26,6 @@ def main():
         print("> ", end=' ')
         raw_input = input()
         if raw_input == "1":
-            # Hero attacks enemy
             player.attack(enemy)
             if not enemy.alive():
                 print("The {} is dead.".format(type(enemy).__name__.lower()))
