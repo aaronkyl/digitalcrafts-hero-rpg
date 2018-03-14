@@ -1,4 +1,4 @@
-from character import Character
+from base import Character
 from random import randint
 
 class Hero(Character):

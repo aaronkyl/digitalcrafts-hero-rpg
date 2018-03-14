@@ -1,4 +1,4 @@
-from character import Character
+from base import Character
 
 class Zombie(Character):
     def alive(self):

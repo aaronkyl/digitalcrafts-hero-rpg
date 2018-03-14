@@ -6,14 +6,17 @@
 # 2. do nothing - in which case the goblin will attack him anyway
 # 3. flee
 
+from colorama import Fore, Style
 from goblin import Goblin
 from hero import Hero
 from zombie import Zombie
+from medic import Medic
 
 def main():
-    enemy = Goblin(6000, 2)
+    # enemy = Goblin(10, 2)
     # enemy = Zombie(6, 1)
-    player = Hero(10000, 5)
+    enemy = Medic(100, 2)
+    player = Hero(20, 5)
 
     while enemy.alive() and player.alive():
         player.print_status()
