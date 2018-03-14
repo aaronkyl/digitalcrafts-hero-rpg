@@ -8,9 +8,11 @@
 
 from goblin import Goblin
 from hero import Hero
+from zombie import Zombie
 
 def main():
-    enemy = Goblin()
+    # enemy = Goblin()
+    enemy = Zombie()
     player = Hero()
 
     while enemy.alive() and player.alive():
@@ -18,16 +20,16 @@ def main():
         enemy.print_status()
         print()
         print("What do you want to do?")
-        print("1. fight goblin")
+        print("1. fight {}".format(type(enemy).__name__.lower()))
         print("2. do nothing")
         print("3. flee")
         print("> ", end=' ')
         raw_input = input()
         if raw_input == "1":
-            # Hero attacks goblin
+            # Hero attacks enemy
             player.attack(enemy)
             if not enemy.alive():
-                print("The goblin is dead.")
+                print("The {} is dead.".format(type(enemy).__name__.lower()))
         elif raw_input == "2":
             pass
         elif raw_input == "3":
@@ -42,4 +44,5 @@ def main():
             if not player.alive():
                 print("You are dead.")
 
-main()
+if __name__ == "__main__":
+    main()
