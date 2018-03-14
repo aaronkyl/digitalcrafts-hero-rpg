@@ -11,9 +11,9 @@ from hero import Hero
 from zombie import Zombie
 
 def main():
-    enemy = Goblin(6, 2)
+    enemy = Goblin(6000, 2)
     # enemy = Zombie(6, 1)
-    player = Hero(10, 5)
+    player = Hero(10000, 5)
 
     while enemy.alive() and player.alive():
         player.print_status()

@@ -9,12 +9,16 @@ class Character:
         else:
             return False
         
-    def attack(self, target):
-        target.health -= self.power
-        if type(self).__name__.lower() == 'hero':
-            print("You do {} damage to the {}.".format(self.power, type(target).__name__.lower()))
+    def attack(self, target, attack_power=None):
+        if attack_power == None:
+            attack_power = self.power
+            target.health -= attack_power
         else:
-            print("The {} does {} damage to you.".format(type(self).__name__.lower(), self.power))
+            target.health -= attack_power
+        if type(self).__name__.lower() == 'hero':
+            print("You do {} damage to the {}.".format(attack_power, type(target).__name__.lower()))
+        else:
+            print("The {} does {} damage to you.".format(type(self).__name__.lower(), attack_power))
             
     def print_status(self):
         if type(self).__name__.lower() == 'hero':
