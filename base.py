@@ -1,5 +1,5 @@
 class Character:
-    def __init__(self, health, power, bounty = 0):
+    def __init__(self, health, power, bounty=0):
         self.health = health
         self.power = power
         self.bounty = 0
@@ -35,6 +35,7 @@ class Character:
                 print("The {} does {} damage to you.".format(type(self).__name__.lower(), attack_power))
             
             target.attacked_response()
+            
         else:
             target.defended()
             
