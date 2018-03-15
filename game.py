@@ -6,7 +6,7 @@
 # 2. do nothing - in which case the goblin will attack him anyway
 # 3. flee
 import os
-
+from colorama import init, Fore, Style
 from characters.goblin import Goblin
 from characters.hero import Hero
 from characters.zombie import Zombie
@@ -19,6 +19,7 @@ def main():
     # enemy = Medic(100, 2)
     # enemy = Shadow(2)
     player = Hero(20, 5)
+    # random.choice([]) for enemy?
 
     os.system('cls||clear')
     

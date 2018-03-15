@@ -1,3 +1,5 @@
+from colorama import init, Fore, Style
+
 class Character:
     def __init__(self, health, power, bounty=0):
         self.health = health
@@ -30,9 +32,9 @@ class Character:
                 target.health -= attack_power
             
             if type(self).__name__.lower() == 'hero':
-                print("You do {} damage to the {}.".format(attack_power, type(target).__name__.lower()))
+                print("You do" + Fore.CYAN + Style.BRIGHT + " {} damage".format(attack_power) + Style.RESET_ALL + " to the {}.".format(type(target).__name__.lower()))
             else:
-                print("The {} does {} damage to you.".format(type(self).__name__.lower(), attack_power))
+                print("The {} does".format(type(self).__name__.lower()) + Fore.RED + " {} damage".format(attack_power) + Style.RESET_ALL + " to you.")
             
             target.attacked_response()
             
