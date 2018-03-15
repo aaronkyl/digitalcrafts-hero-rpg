@@ -5,6 +5,7 @@
 # 1. fight goblin
 # 2. do nothing - in which case the goblin will attack him anyway
 # 3. flee
+import os
 
 from characters.goblin import Goblin
 from characters.hero import Hero
@@ -19,6 +20,8 @@ def main():
     # enemy = Shadow(2)
     player = Hero(20, 5)
 
+    os.system('cls||clear')
+    
     while enemy.alive() and player.alive():
         player.print_status()
         enemy.print_status()
@@ -46,6 +49,9 @@ def main():
             enemy.attack(player)
             if not player.alive():
                 print("You are dead.")
+        
+        input("Press Enter to continue...")
+        os.system('cls||clear')
 
 if __name__ == "__main__":
     main()
