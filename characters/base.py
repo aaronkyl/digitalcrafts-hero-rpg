@@ -31,15 +31,17 @@ class Character:
             else:
                 target.health -= attack_power
             
-            if type(self).__name__.lower() == 'hero':
-                print("You do" + Fore.CYAN + Style.BRIGHT + " {} damage".format(attack_power) + Style.RESET_ALL + " to the {}.".format(type(target).__name__.lower()))
-            else:
-                print("The {} does".format(type(self).__name__.lower()) + Fore.RED + " {} damage".format(attack_power) + Style.RESET_ALL + " to you.")
+            self.print_attack_results(target, attack_power)
             
             target.attacked_response()
-            
         else:
             target.defended()
+    
+    def print_attack_results(self, target, attack_power):
+        if type(self).__name__.lower() == 'hero':
+            print("You do" + Fore.CYAN + Style.BRIGHT + " {} damage".format(attack_power) + Style.RESET_ALL + " to the {}.".format(type(target).__name__.lower()))
+        else:
+            print("The {} does".format(type(self).__name__.lower()) + Fore.RED + " {} damage".format(attack_power) + Style.RESET_ALL + " to you.")
             
     def print_status(self):
         if type(self).__name__.lower() == 'hero':

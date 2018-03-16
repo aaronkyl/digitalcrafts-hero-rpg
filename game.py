@@ -6,32 +6,23 @@
 # 2. do nothing - in which case the goblin will attack him anyway
 # 3. flee
 import os
+from characters import *
 from colorama import init, Fore, Style
-from characters.goblin import Goblin
-from characters.hero import Hero
-from characters.zombie import Zombie
-from characters.medic import Medic
-from characters.shadow import Shadow
+from ui import UI
+from random import choice
 
 def main():
-    # enemy = Goblin(10, 2)
-    enemy = Zombie(6, 1)
-    # enemy = Medic(100, 2)
-    # enemy = Shadow(2)
     player = Hero(20, 5)
-    # random.choice([]) for enemy?
+    enemy = choice([Goblin(10, 2), Medic(10, 2), Shadow(2), Zombie(6, 1)])
+    
+    ui = UI()
 
-    os.system('cls||clear')
+    ui.clear()
     
     while enemy.alive() and player.alive():
-        player.print_status()
-        enemy.print_status()
+        ui.print_status(player, enemy)
         print()
-        print("What do you want to do?")
-        print("1. fight {}".format(type(enemy).__name__.lower()))
-        print("2. do nothing")
-        print("3. flee")
-        print("> ", end=' ')
+        ui.print_menu(enemy)
         raw_input = input()
         if raw_input == "1":
             player.attack(enemy)
@@ -43,7 +34,7 @@ def main():
             print("Goodbye.")
             break
         else:
-            print("Invalid input {}".format(raw_input))
+            print("Invalid input {}. {} has a chance to attack!".format(raw_input, type(enemy).__name__.lower()))
 
         if enemy.alive():
             # Goblin attacks hero
