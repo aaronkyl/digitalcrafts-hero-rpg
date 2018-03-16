@@ -6,6 +6,7 @@ class Medic(Character):
         super().__init__(health, power, bounty=10)
         
     def attacked_response(self):
+        """the medic has a 20% chance of healing self"""
         if randint(0, 100) < 20:
             self.health += 2
             print("The medic heals 2 health!")

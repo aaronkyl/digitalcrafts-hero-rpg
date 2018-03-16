@@ -14,7 +14,6 @@ from random import choice
 def main():
     player = Hero(20, 5)
     enemy = choice([Goblin(10, 2), Medic(10, 2), Shadow(2), Zombie(6, 1)])
-    
     ui = UI()
 
     ui.clear()
@@ -34,7 +33,7 @@ def main():
             print("Goodbye.")
             break
         else:
-            print("Invalid input {}. {} has a chance to attack!".format(raw_input, type(enemy).__name__.lower()))
+            print("Invalid input: {}. {} has a chance to attack!".format(raw_input, type(enemy).__name__.lower()))
 
         if enemy.alive():
             # Goblin attacks hero
