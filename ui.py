@@ -5,7 +5,7 @@ class UI:
     def __init__(self):
         pass
     
-    def print_status(self, player, target):
+    def print_combat_status_table(self, player, target):
         print(Fore.WHITE + Style.BRIGHT + "*---------------------------*" + Style.RESET_ALL)
         print(Fore.WHITE + Style.BRIGHT + "|          |" + Fore.CYAN + " Health" + Fore.WHITE + " |" + Fore.CYAN + " Power" + Fore.WHITE + " |" + Style.RESET_ALL)
         print(Fore.WHITE + Style.BRIGHT + "+---------------------------+" + Style.RESET_ALL)
