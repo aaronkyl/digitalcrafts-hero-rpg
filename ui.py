@@ -1,5 +1,5 @@
 from colorama import init, Fore, Style
-from items.treasure_chest import TreasureChest
+from items.treasurechest import TreasureChest
 import os
 
 class UI:
@@ -51,29 +51,61 @@ class UI:
         print()
         print()
         print()
-        input("Press" + Fore.GREEN + " Enter to continue..." + Style.RESET_ALL)
+        input("Press" + Fore.GREEN + " Enter" + Style.RESET_ALL+ " to continue...")
         
     def start_screen(self):
         print("You enter the door at the back of the shop's storeroom,")
         print("determined to save your brother from whatever unholy")
-        print("creatures took him during the last full moon.")
+        print("creatures took him during the last full moon. You find")
+        print("yourself in a downward-sloping tunnel, nothing but")
+        print("darkness ahead.")
         print()
-        input("Press" + Fore.GREEN + " Enter to continue..." + Style.RESET_ALL)
+        print("You begin walking...")
+        print()
+        input("Press" + Fore.GREEN + " Enter" + Style.RESET_ALL+ " to continue...")
     
     def main_screen(self):
         print("The tunnel continues forward into the unending darkness,")
         print("its gentle downward slope unchanging.")
-        print("Will you continue, resupply, or abandon your quest?") 
+        print("Will you (C)ontinue, (R)esupply, or (A)bandon your quest?")
+        for i in range(0, 8):
+            print()
         print("> ", end=' ')
         
     def peaceful_turn_screen(self):
         print("You continue down the tunnel, the sound of dripping")
         print("liquids everpresent even though you have yet to see")
-        print("any signs of water down here.")
+        print("any signs of water.")
         for i in range(0, 8):
             print()
-        input("Press" + Fore.GREEN + " Enter to continue..." + Style.RESET_ALL)
+        input("Press" + Fore.GREEN + " Enter" + Style.RESET_ALL+ " to continue...")
     
     def treasure_chest_screen(self, contents):
         print("You come across a treasure chest sitting in the middle")
-        print("of the tunnel! You open it and find" + Fore.YELLOW + Stlye.BRIGHT + " {}".format(contents) + Style.RESET_ALL)
+        print("of the tunnel! You open it and find" + Fore.YELLOW + Style.BRIGHT + " {}!".format(contents) + Style.RESET_ALL)
+        for i in range(0, 9):
+            print()
+        input("Press" + Fore.GREEN + " Enter" + Style.RESET_ALL+ " to continue...")
+
+    def game_over_screen(self):
+        print(Fore.RED + "                   *              )               (     ")
+        print(" (        (      (  `          ( /(               )\ )  ")
+        print(" )\ )     )\     )\))(   (     )\()) (   (   (   (()/(  ")
+        print("(()/(  ((((_)(  ((_)()\  )\   ((_)\  )\  )\  )\   /(_)) ")
+        print(" /(_))" + Fore.YELLOW + "_" + Fore.RED + " )\ " + Fore.YELLOW + "_" + Fore.RED +" )\ (_()((_)((_)    ((_)((_)((_)((_) (_))   ")
+        print("(_))" + Fore.YELLOW +" __|" + Fore.RED + "(_)" + Fore.YELLOW +"_\\" + Fore.RED + "(_)" + Fore.YELLOW + "|  \/  || __|  / _ \\\ \ / / | __|| _ \  ")
+        print("  | (_ | / _ \  | |\/| || _|  | (_) |\ V /  | _| |   /  ")
+        print("   \___|/_/ \_\ |_|  |_||___|  \___/  \_/   |___||_|_\  " + Style.RESET_ALL)
+        for i in range(0, 3):
+            print()
+        
+
+
+
+
+
+
+
+
+
+                                                        

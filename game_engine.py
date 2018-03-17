@@ -1,5 +1,6 @@
 from items import *
 from random import randint
+from colorama import Fore, Style
 from ui import UI
 ui = UI()
 
@@ -24,9 +25,10 @@ def combat(enemy, player):
         if enemy.alive():
             enemy.attack(player)
             if not player.alive():
-                print(Fore.RED + Style.BRIGHT + "You have failed..." + Style.RESET_ALL)
+                ui.clear()
+                ui.game_over_screen()
         
-        input("Press" + Fore.GREEN + " Enter to continue..." + Style.RESET_ALL)
+        input("Press" + Fore.GREEN + " Enter" + Style.RESET_ALL+ " to continue...")
         
         # clear the screen
         ui.clear()
