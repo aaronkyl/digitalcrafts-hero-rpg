@@ -1,13 +1,13 @@
-import os
+from items import *
+from random import randint
 from ui import UI
 ui = UI()
-
 
 def combat(enemy, player):
     while enemy.alive() and player.alive():
         ui.print_combat_status_table(player, enemy)
         print()
-        ui.print_menu(enemy)
+        ui.print_combat_menu(enemy)
         raw_input = input()
         if raw_input == "1":
             player.attack(enemy)
@@ -24,9 +24,9 @@ def combat(enemy, player):
         if enemy.alive():
             enemy.attack(player)
             if not player.alive():
-                print("You are dead.")
+                print(Fore.RED + Style.BRIGHT + "You have failed..." + Style.RESET_ALL)
         
-        input("Press Enter to continue...")
+        input("Press" + Fore.GREEN + " Enter to continue..." + Style.RESET_ALL)
         
         # clear the screen
-        os.system('cls||clear')
+        ui.clear()

@@ -12,3 +12,12 @@ class Hero(Character):
             super().attack(target, self.power * 2)
         else:
             super().attack(target)
+            
+    def buy(self, item):
+        pass
+    
+    def sell(self, item):
+        pass
+    
+    def use(self, item):
+        pass
