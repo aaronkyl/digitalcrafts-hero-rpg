@@ -7,4 +7,4 @@ class TreasureChest:
         self.name = "Treasure Chest"
     
     def contains(self):
-        return choice(GoldPouch(), Potion())
+        return choice([GoldPouch(), Potion()])

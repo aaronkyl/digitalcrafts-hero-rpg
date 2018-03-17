@@ -33,7 +33,6 @@ class UI:
         print("What do you want to do?")
         print("1. fight {}".format(type(target).__name__.lower()))
         print("2. do nothing")
-        print("3. flea") # if user chooses "flea" they turn into a flea with 1 HP >:)
         print("> ", end=' ')
         
     def clear(self):
@@ -61,14 +60,16 @@ class UI:
         print("darkness ahead.")
         print()
         print("You begin walking...")
-        print()
+        for i in range(0, 4):
+            print()
         input("Press" + Fore.GREEN + " Enter" + Style.RESET_ALL+ " to continue...")
     
     def main_screen(self):
         print("The tunnel continues forward into the unending darkness,")
         print("its gentle downward slope unchanging.")
-        print("Will you (C)ontinue, (R)esupply, or (A)bandon your quest?")
-        for i in range(0, 8):
+        print("Will you (C)ontinue, (R)esupply, (U)se an item, ")
+        print("or (A)bandon your quest?")
+        for i in range(0, 7):
             print()
         print("> ", end=' ')
         
@@ -82,8 +83,29 @@ class UI:
     
     def treasure_chest_screen(self, contents):
         print("You come across a treasure chest sitting in the middle")
-        print("of the tunnel! You open it and find" + Fore.YELLOW + Style.BRIGHT + " {}!".format(contents) + Style.RESET_ALL)
+        print("of the tunnel! You open it and find" + Fore.YELLOW + Style.BRIGHT + " {}".format(contents.name) + Style.RESET_ALL + "!")
         for i in range(0, 9):
+            print()
+        input("Press" + Fore.GREEN + " Enter" + Style.RESET_ALL+ " to continue...")
+
+    def store_screen(self, store):
+        print("You run back up the tunnel and return to the storeroom.")
+        print("The store's owner turns to you. \"This is all I've got")
+        print("at the moment,\" she says.")
+        print()
+        for item in store.inventory:
+            print("{}: {}, {} gold".format(store.inventory.index(item) + 1, item.name, item.price))
+
+    def view_player_inventory(self, player):
+        print("Your current inventory:")
+        for item in player.inventory:
+            print("{}: {} available".format(item.name, item.quantity))
+
+    def abandonment_screen(self):
+        print("You lose all nerve and are consumed with fright. You turn")
+        print("and flee back up the tunnel, abandoning your brother to")
+        print("whatever horrifying fate awaits him in the eternal darkness.")
+        for i in range(0, 8):
             print()
         input("Press" + Fore.GREEN + " Enter" + Style.RESET_ALL+ " to continue...")
 

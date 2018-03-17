@@ -4,7 +4,7 @@ from random import randint
 class Hero(Character):
     def __init__(self, health, power):
         self.purse = 0
-        self.inventory = {}
+        self.inventory = []
         super().__init__(health, power)
     
     def attack(self, target):
